@@ -1,0 +1,38 @@
+
+table, th, td {
+    border: 2px;
+}
+
+table {
+    width: 100%;
+    display: table;
+    border-collapse: collapse;
+    border-spacing: 2px;
+}
+
+th {
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+td {
+    padding: 0 5px;
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+    border-radius: 2px;
+    font-family: "MS Reference Sans Serif", serif;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 1.1rem;
+    width: 2%;
+}
+
+#numLeft {
+    text-align: left;
+    width: max-content;
+}
+
+#numLeft2 {
+    text-align: left;
+}
