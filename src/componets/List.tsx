@@ -1,6 +1,6 @@
 import React from "react";
 import {IListItemProps} from "../types/IListItemProps";
-import {TypeName} from "../types/TypeName";
+import {GetNameType} from "../types/GetNameType";
 
 
 export const List: React.FC<IListItemProps> = ({items}) => {
@@ -18,7 +18,7 @@ export const List: React.FC<IListItemProps> = ({items}) => {
                                 <div>{item.name}</div>
                                 <div>{item.price}</div>
                                 <div>{item.quantity}</div>
-                                <div><TypeName nmType={item.type} /></div>
+                                <div><GetNameType name={item.type}  item={item} /></div>
                             </b>
                         </span>
                         <i className="material-icons red-text"> delete</i>

@@ -1,6 +1,5 @@
 
-
-const Navbar = () => {
+export const Navbar = () => {
     return (
         <nav>
             <div className="nav-wrapper brown">
@@ -14,10 +13,3 @@ const Navbar = () => {
         </nav>
     );
 }
-
-export default Navbar; // className="container"
-
-//              width: 150px; /* устанавливаем ширину элемента */
-//              height: 150px; /* устанавливаем высоту элемента */
-//              padding: 10px; /* устанавливаем внутренние отступы элемента */className="grid-item color1"
-//              border: 5px; /* устанавливаем границы элемента */

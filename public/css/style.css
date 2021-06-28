@@ -6,7 +6,7 @@ table, th, td {
 table {
     width: 100%;
     display: table;
-    border-collapse: collapse;
+//    border-collapse: collapse;
     border-spacing: 2px;
 }
 
@@ -18,21 +18,24 @@ th {
 td {
     padding: 0 5px;
     display: table-cell;
-    text-align: right;
+    text-align: center;
     vertical-align: middle;
     border-radius: 2px;
     font-family: "MS Reference Sans Serif", serif;
-    font-weight: bold;
     font-style: normal;
     font-size: 1.1rem;
-    width: 2%;
+
 }
 
 #numLeft {
     text-align: left;
-    width: max-content;
+    font-weight: normal;
 }
 
-#numLeft2 {
-    text-align: left;
+#numRight {
+    text-align: right;
+    width: min-content;
+    font-weight: bold;
+    width: 2%;
 }
+

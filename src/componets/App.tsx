@@ -1,6 +1,5 @@
 import React from "react";
-import Navbar from "./Navbar";
-import {List} from "./List";
+import {Navbar} from "./Navbar";
 import {IItem} from "../types/IItem";
 import {Table} from "./Table";
 
