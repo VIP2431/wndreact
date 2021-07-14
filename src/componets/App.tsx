@@ -1,19 +1,19 @@
 import React from "react";
-import {Navbar} from "./Navbar";
-import {IItem} from "../types/IItem";
+import {ItemTable} from "./ItemTable";
+import NavbarSme from "./NavbarSme";
 import {Table} from "./Table";
+import ItemService from "../services/ItemService";
+import {IItem} from "../types/IItem";
+
+interface  PropsItem {
+    items: IItem[];
+}
 
 export const App: React.FC = () => {
 
-    let items: IItem[];
-    items = require("../NEW_node.json");
-
-    return <div>
+    return<div>
         <div>
-            <Navbar />
-        </div>
-        <div className="container">
-            <Table items={items} />
-        </div>
-      </div>
+            <NavbarSme />
+       </div>
+     </div>
 };

@@ -16,8 +16,8 @@ export const List: React.FC<IListItemProps> = ({items}) => {
                             <b>
                                 <div>{item.key}</div>
                                 <div>{item.name}</div>
-                                <div>{item.price}</div>
-                                <div>{item.quantity}</div>
+                                <div>{item.d1}</div>
+                                <div>{item.d2}</div>
                                 <div><GetNameType name={item.type}  item={item} /></div>
                             </b>
                         </span>

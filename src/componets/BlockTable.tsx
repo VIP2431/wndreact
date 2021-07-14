@@ -1,18 +1,20 @@
 import React from "react";
+import {IItem} from "../types/IItem";
 import {GetNameType} from "../types/GetNameType";
 import {GetNameStatus} from "../types/GetNameStatus";
 import {GetNameCategory} from "../types/GetNameCategory";
 import {GetNameUnit} from "../types/GetNameUnit";
-import {IItem} from "../types/IItem";
 import ItemService from "../services/ItemService";
-import * as url from "url";
-const NODE_TYPE_REST_API_URL = 'http://localhost:8091/api/itemDtoTypeList';
+import {BsTrashFill} from  "react-icons/bs";
+
+let items: IItem[];
+items = require("../NEW_node.json");
 
 interface  PropsItem {
     items: IItem[];
 }
 
-export class Table extends React.Component<{}, PropsItem> {
+export class BlockTable extends React.Component<{}, PropsItem> {
 
     constructor(props: PropsItem) {
         super(props);
@@ -20,7 +22,7 @@ export class Table extends React.Component<{}, PropsItem> {
     }
 
     componentDidMount(){
-        ItemService.getDtoTypeList(NODE_TYPE_REST_API_URL).then((response) => {
+        ItemService.getNodeTypeList().then((response) => {
             this.setState({items: response.data})
         });}
 
@@ -31,9 +33,7 @@ export class Table extends React.Component<{}, PropsItem> {
                 <tr>
                     <th>Flag</th>
                     <th>N</th>
-                    <th>Title</th>
-                    <th>Status</th>
-                    <th>Category</th>
+                    <th>Name</th>
                     <th>Price</th>
                     <th>Unit</th>
                     <th>Quantity</th>
@@ -42,24 +42,21 @@ export class Table extends React.Component<{}, PropsItem> {
                 </thead>
 
                 <tbody>
-                    { this.state.items.map( item => {
-                        return (
-                            <tr key={item.name}>
+                {
+                    this.state.items.map(
+                        item =>
+                            <tr key={item.key}>
                                 <td><input type="checkbox" /></td>
                                 <td id="numRight">{item.key}</td>
                                 <td id="numLeft"><GetNameType name={item.type} item={item} /></td>
-                                <td><GetNameStatus name={item.status} /></td>
-                                <td><GetNameCategory name={item.category} /></td>
                                 <td id="numRight">{item.d1}</td>
                                 <td><GetNameUnit name={item.unit} /></td>
                                 <td id="numRight">{item.d2}</td>
-                                <td><i className="material-icons red-text"> delete</i></td>
+                                <td><BsTrashFill title="delete" /></td>
                             </tr>
-                        )
-                    })}
+                    )
+                }
                 </tbody>
-
             </table>
-    )}
+        )}
 }
-
