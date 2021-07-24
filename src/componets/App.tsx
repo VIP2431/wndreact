@@ -1,19 +1,11 @@
 import React from "react";
-import {ItemTable} from "./ItemTable";
-import NavbarSme from "./NavbarSme";
-import {Table} from "./Table";
-import ItemService from "../services/ItemService";
-import {IItem} from "../types/IItem";
-
-interface  PropsItem {
-    items: IItem[];
-}
+import NavbarMain from "../nav/NavbarMain";
 
 export const App: React.FC = () => {
 
     return<div>
         <div>
-            <NavbarSme />
+            <NavbarMain />
        </div>
      </div>
 };

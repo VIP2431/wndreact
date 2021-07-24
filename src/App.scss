@@ -1,43 +1,52 @@
-// $font-size-root effects the value of `rem`, which is used for as well font sizes, paddings and margins
-// $font-size-base effects the font size of the body text
-$font-size-root:              null !default;
-$font-size-base:              1rem !default; // Assumes the browser default, typically `16px`
-$font-size-sm:                $font-size-base * .875 !default;
+
+@import-normalize;
+
+// Custom.scss
+// Вариант Б. Включите части Bootstrap
+
+// 1. Сначала включите функции (чтобы Вы могли управлять цветами, SVG, вычислением и т.д.)
+@import "../public/scss/vendors/bootstrap-5.0.2/scss/functions";
+
+// 2. Включите сюда любые переопределения переменных по умолчанию
+
+
+$line-height-base:            1.5;
+$font-size-base:              1rem !default;  // Assumes the browser default, typically `16px`
 $font-size-lg:                $font-size-base * 1.25 !default;
+$font-size-sm:                $font-size-base * .875 !default;
 
-$font-weight-lighter:         lighter !default;
-$font-weight-light:           300 !default;
-$font-weight-normal:          400 !default;
-$font-weight-bold:            700 !default;
-$font-weight-bolder:          bolder !default;
-
-$font-weight-base:            $font-weight-normal !default;
-
-$line-height-base:            1.5 !default;
-$line-height-sm:              1.25 !default;
-$line-height-lg:              2 !default;
-
-
-$primary:       #6c757d!default;
-$secondary:     #0d6efd !default;
 // Navbar
-
 // scss-docs-start navbar-variables
-$navbar-padding-y:                  2px; //$spacer / 2 !default;
-$navbar-padding-x:                  null !default;
-
-$navbar-nav-link-padding-x:         .5rem !default;
+$navbar-padding-y:                  0;        //  $spacer(=1rem) / 2 !default;
 
 $navbar-brand-font-size:            $font-size-lg !default;
 // Compute the navbar-brand padding-y so the navbar-brand will have the same height as navbar-text and nav-link
-$nav-link-height:                   $font-size-base * $line-height-base; // $nav-link-padding-y * 2 !default;
+//    $font-size-base(=1rem) * $line-height-base(=1.5) + $nav-link-padding-y(=0.5) * 2 !default;
+$nav-link-height:                   1.5rem;
+//    $navbar-brand-font-size * $line-height-base(=1.5) !default;
 $navbar-brand-height:               $navbar-brand-font-size * $line-height-base !default;
-$navbar-brand-padding-y:            ($nav-link-height - $navbar-brand-height) / 2 !default;
-$navbar-brand-margin-end:           2rem !default;
-
-$navbar-toggler-padding-y:          .25rem !default;
-$navbar-toggler-padding-x:          .75rem !default;
 // scss-docs-end navbar-variables
 
-@import "~bootstrap/scss/bootstrap";
+
+
+// @import "../public/scss/vendors/bootstrap-5.0.2/dist/js/bootstrap.bundle.js";
+// Включить весь полный стек импорта
+@import "../public/scss/vendors/bootstrap-5.0.2/scss/bootstrap";
+
+// 3. Включите оставшуюся часть необходимых таблиц стилей Bootstrap
+//@import "../public/scss/vendors/bootstrap-5.0.2/scss/variables";
+//@import "../public/scss/vendors/bootstrap-5.0.2/scss/mixins";
+
+// 4. Включите любые дополнительные компоненты Bootstrap, как Вам нравится
+//@import "../public/scss/vendors/bootstrap-5.0.2/scss/root";
+//@import "../public/scss/vendors/bootstrap-5.0.2/scss/reboot";
+//@import "../public/scss/vendors/bootstrap-5.0.2/scss/type";
+//@import "../public/scss/vendors/bootstrap-5.0.2/scss/images";
+//@import "../public/scss/vendors/bootstrap-5.0.2/scss/containers";
+//@import "../public/scss/vendors/bootstrap-5.0.2/scss/grid";
+//@import "../public/scss/vendors/bootstrap-5.0.2/scss/nav";
+//@import "../public/scss/vendors/bootstrap-5.0.2/scss/navbar";
+//@import "../public/scss/vendors/bootstrap-5.0.2/scss/dropdown";
+
+// 5. Добавьте сюда дополнительный пользовательский код
 

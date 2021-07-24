@@ -1,5 +1,4 @@
 import axios from "axios";
-import * as url from "url";
 
 const ITEM_REST_API_URL = 'http://localhost:8091/api/items';
 const NODE_REST_API_URL = 'http://localhost:8091/api/nodes';
