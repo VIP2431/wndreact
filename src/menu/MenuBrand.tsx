@@ -1,9 +1,6 @@
-import {Button, Dropdown, DropdownButton, Nav, NavbarBrand, NavDropdown} from "react-bootstrap";
+import {Button, Dropdown, DropdownButton, Nav} from "react-bootstrap";
 import React from "react";
 import {IMenuBrand} from "../types/IMenuBrand";
-import {useDispatch} from "react-redux";
-import {ETableVariant} from "../types/IMain";
-import {ENavbarActionTypes} from "../store/reducers/navbarReducer";
 
 export enum EPageBrand {
     CURRENT_HOME = 'currentHome',
@@ -19,10 +16,10 @@ const menu: IMenuBrand[] = [
 const MenuBrand = () => {
 
     const name = localStorage.getItem(EPageBrand.CURRENT_HOME);
-    const url = (name !== null && name !== undefined) ? name : EPageBrand.PAGE_MAIN
-    const id = menu.findIndex( item => item.url === url);
-    const i = (id >= 0) ? id : 0
-    const title = menu[i].title
+    const url = (typeof(name) === 'string') ? name : EPageBrand.PAGE_MAIN
+    let id = menu.findIndex( item => item.url === url)
+    id = (id >= 0 && id <= menu.length) ? id : 0
+    const title = menu[id].title
 
     const setPage = (url: string) => {
         localStorage.setItem(EPageBrand.CURRENT_HOME, url)
@@ -34,10 +31,11 @@ const MenuBrand = () => {
                 <DropdownButton className="drop" variant="secondary" title={<b>{title}</b>}>
                     { menu.map( (p) =>
                         <Nav.Link
+                            className="menu-item"
                             key={p.id}
                             href={p.url}
                             onClick={() => setPage(p.url)}>
-                            <Button>{p.title}</Button>
+                            <Button variant="secondary">{p.title}</Button>
                         </Nav.Link>
                     )}
                 </DropdownButton>

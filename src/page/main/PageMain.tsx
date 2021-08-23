@@ -18,7 +18,13 @@ const PageMain = () => {
                     <WndMain />
                </div>
                 <aside className='wnd-param'>
-                    <WndParam />
+                    <div className='wnd-section'>
+                        <h2>Edit</h2>
+                    </div>
+                     <div className='wnd-section-2'>
+                        <WndParam />
+                    </div>
+
                 </aside>
             </main>
             <footer className='wnd-footer'>

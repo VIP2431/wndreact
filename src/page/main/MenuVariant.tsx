@@ -18,17 +18,17 @@ export const MenuVariant: React.FC = () => {
         <DropdownButton className="drop" variant="secondary" title={curVariant}>
             {console.log('MenuVariant return=[' + curVariant + ']')}
                 <NavDropdown.Item>
-                    <Button onClick={() => setVariant( ETableVariant.TABLE_SHORT)}>
+                    <Button onClick={() => setVariant( ETableVariant.TABLE_SHORT)} variant="secondary">
                         TABLE_SHORT
                     </Button>
                 </NavDropdown.Item>
                 <NavDropdown.Item>
-                     <Button onClick={() => setVariant( ETableVariant.TABLE_MIDL)}>
+                     <Button onClick={() => setVariant( ETableVariant.TABLE_MIDL)} variant="secondary">
                          TABLE___MIDL
                     </Button>
                 </NavDropdown.Item>
                 <NavDropdown.Item>
-                    <Button onClick={() => setVariant( ETableVariant.TABLE_FULL)}>
+                    <Button onClick={() => setVariant( ETableVariant.TABLE_FULL)} variant="secondary">
                         TABLE___FULL_
                     </Button>
                 </NavDropdown.Item>
