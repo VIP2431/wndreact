@@ -19,4 +19,40 @@ export  interface IItem {
     category?:string;
     code?: string;
     vendor?: string;
-};
+}
+
+export enum EUrlApart{
+    ITEM_REST_API_URL = 'http://localhost:8091/api/items',
+    NODE_REST_API_URL = 'http://localhost:8091/api/nodes',
+    NODE_TYPE_REST_API_URL = 'http://localhost:8091/api/itemDtoTypeList',
+    ITEM_DTO_NAME_REST_API_URL = 'http://localhost:8091/api/itemDtoListName',
+    ITEM_DTO_ID_REST_API_URL = 'http://localhost:8091/api/itemDtoListId',
+}
+
+export interface IItemState {
+    items: IItem[];
+    loading: boolean;
+    error: null | string;
+}
+
+export enum EItemActionTypes {
+    GET_ITEMS = 'GET_ITEMS',
+    GET_ITEMS_SUCCESS = 'GET_ITEMS_SUCCESS',
+    GET_ITEMS_ERROR = 'GET_ITEMS_ERROR',
+}
+
+interface  IGetItemsAction {
+    type: EItemActionTypes.GET_ITEMS;
+}
+
+interface IGetItemsSuccessAction {
+    type: EItemActionTypes.GET_ITEMS_SUCCESS;
+    payload: IItem[];
+}
+
+interface IGetItemsErrorAction {
+    type: EItemActionTypes.GET_ITEMS_ERROR;
+    payload: string;
+}
+
+export type IItemAction = IGetItemsAction | IGetItemsErrorAction | IGetItemsSuccessAction

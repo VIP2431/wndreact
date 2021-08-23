@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import ItemService from "../services/ItemService";
-import {TableHome} from "./Table/TableHome";
+import {TableHome} from "./table/TableHome";
 
 export const Home = () => {
 
