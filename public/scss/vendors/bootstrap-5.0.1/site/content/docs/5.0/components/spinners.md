@@ -1,14 +1,14 @@
 ---
 layout: docs
 title: Spinners
-description: Indicate the loading state of a component or page with Bootstrap spinners, built entirely with HTML, CSS, and no JavaScript.
+description: Indicate the isLoading state of a component or page with Bootstrap spinners, built entirely with HTML, CSS, and no JavaScript.
 group: components
 toc: true
 ---
 
 ## About
 
-Bootstrap "spinners" can be used to show the loading state in your projects. They're built only with HTML and CSS, meaning you don't need any JavaScript to create them. You will, however, need some custom JavaScript to toggle their visibility. Their appearance, alignment, and sizing can be easily customized with our amazing utility classes.
+Bootstrap "spinners" can be used to show the isLoading state in your projects. They're built only with HTML and CSS, meaning you don't need any JavaScript to create them. You will, however, need some custom JavaScript to toggle their visibility. Their appearance, alignment, and sizing can be easily customized with our amazing utility classes.
 
 For accessibility purposes, each loader here includes `role="status"` and a nested `<span class="visually-hidden">Loading...</span>`.
 
@@ -18,7 +18,7 @@ For accessibility purposes, each loader here includes `role="status"` and a nest
 
 ## Border spinner
 
-Use the border spinners for a lightweight loading indicator.
+Use the border spinners for a lightweight isLoading indicator.
 
 {{< example >}}
 <div class="spinner-border" role="status">

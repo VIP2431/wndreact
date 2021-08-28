@@ -1,8 +1,8 @@
 import axios from "axios";
 import {Dispatch} from "redux";
-import {EItemActionTypes, EUrlApart, IItemAction} from "../../types/IItem";
+import {EItemActionTypes, IItemAction} from "../../types/IItem";
 
-export const getItems = (url:string) => {
+export const fetchItems = (url:string) => {
     return async (dispatch: Dispatch<IItemAction>) => {
         try {
             dispatch({type: EItemActionTypes.GET_ITEMS})

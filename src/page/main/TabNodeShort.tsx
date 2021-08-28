@@ -1,7 +1,8 @@
 import {IItem} from "../../types/IItem";
 import React, {FC} from "react";
 import {GetNameType} from "../../services/GetNameType";
-import {ITableProps} from "../../types/IMain";
+import {ETableVariant, ITableProps} from "../../types/IMain";
+import {setVariant} from "../../store/toolkitRedux/navbarSlice";
 
 export const TabNodeShort: FC<ITableProps> =
     ({
@@ -9,6 +10,8 @@ export const TabNodeShort: FC<ITableProps> =
          variant,
          children
      }) => {
+
+        setVariant( ETableVariant.TABLE_SHORT);
 
         return (
             <table className="table table-hover">{console.log('TabNodeShort return')}

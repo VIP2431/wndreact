@@ -29,12 +29,6 @@ export enum EUrlApart{
     ITEM_DTO_ID_REST_API_URL = 'http://localhost:8091/api/itemDtoListId',
 }
 
-export interface IItemState {
-    items: IItem[];
-    loading: boolean;
-    error: null | string;
-}
-
 export enum EItemActionTypes {
     GET_ITEMS = 'GET_ITEMS',
     GET_ITEMS_SUCCESS = 'GET_ITEMS_SUCCESS',

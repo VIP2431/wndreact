@@ -602,7 +602,7 @@ describe('Util', () => {
       expect(document.addEventListener).toHaveBeenCalledTimes(1)
     })
 
-    it('should execute callback if readyState is not "loading"', () => {
+    it('should execute callback if readyState is not "isLoading"', () => {
       const spy = jasmine.createSpy()
       Util.onDOMContentLoaded(spy)
       expect(spy).toHaveBeenCalled()

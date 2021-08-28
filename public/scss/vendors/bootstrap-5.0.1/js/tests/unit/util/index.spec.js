@@ -571,7 +571,7 @@ describe('Util', () => {
       expect(spy).toHaveBeenCalled()
     })
 
-    it('should execute callback if readyState is not "loading"', () => {
+    it('should execute callback if readyState is not "isLoading"', () => {
       const spy = jasmine.createSpy()
       Util.onDOMContentLoaded(spy)
       expect(spy).toHaveBeenCalled()

@@ -25,7 +25,7 @@ aliases: "/examples/"
                                           src="/docs/{{ $.Site.Params.docs_version }}/assets/img/examples/{{ $example.name | urlize }}.png"
                                           alt=""
                                           width="480" height="300"
-                                          loading="lazy">
+                                          isLoading="lazy">
           <h3 class="h5 mb-1">{{ $example.name }}</h3>
         </a>
         <p class="text-muted">{{ $example.description }}</p>
