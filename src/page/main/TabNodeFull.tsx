@@ -1,5 +1,5 @@
 import {IItem} from "../../types/IItem";
-import React, {FC, useEffect, useState} from "react";
+import React, {FC} from "react";
 import {GetNameType} from "../../services/GetNameType";
 import {GetNameUnit} from "../../services/GetNameUnit";
 import {BsTrashFill} from "react-icons/bs";
@@ -10,10 +10,10 @@ export const TabNodeFull: FC<ITableProps> =
          items,
          variant,
          children
-    }) => {
+     }) => {
 
     return (
-        <table className="table table-hover">{console.log('TabNodeFull-1')}
+        <table key='TabNodeFull' className="table table-hover">{console.log('TabNodeFull-1')}
             <thead>
             <tr>
                 <th key="Flag">Flag</th>

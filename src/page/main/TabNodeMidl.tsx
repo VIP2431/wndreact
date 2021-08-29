@@ -1,8 +1,7 @@
 import {IItem} from "../../types/IItem";
-import React, {FC, useEffect, useState} from "react";
+import React, {FC} from "react";
 import {GetNameType} from "../../services/GetNameType";
 import {GetNameUnit} from "../../services/GetNameUnit";
-import {BsTrashFill} from "react-icons/bs";
 import {ITableProps} from "../../types/IMain";
 
 export const TabNodeMidl: FC<ITableProps> =
@@ -13,7 +12,7 @@ export const TabNodeMidl: FC<ITableProps> =
      }) => {
 
         return (
-            <table className="table table-hover">{console.log('TabNodeMidl-1')}
+            <table key='TabNodeMid' className="table table-hover">{console.log('TabNodeMidl-1')}
                 <thead>
                 <tr>
                     <th key="N1">N</th>

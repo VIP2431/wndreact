@@ -1,41 +1,49 @@
 import {Button, DropdownButton, NavDropdown} from "react-bootstrap";
-import React, {useEffect} from "react";
+import React, {FC, useEffect} from "react";
 import {ETableVariant} from "../../types/IMain";
 import {useDispatch} from "react-redux";
-import {navbarChange, setVariant} from "../../store/toolkitRedux/navbarSlice";
+import {setVariant} from "../../store/toolkitRedux/navbarSlice";
 import {useAppSelector} from "../../hooks/hooks";
 
-export const MenuVariant: React.FC = () => {
+export const MenuVariant: FC = () => {
 
-    const curVariant = useAppSelector((state) => state.navbar.curVariant);
+    const navbar: number = useAppSelector((state) => state.navbar.value);
+    let savVariant = localStorage.getItem("mainWndVariant")
+    const curVariant: string = useAppSelector((state) => state.navbar.variant);
 
-    const dispatch = useDispatch();
-    const loadVariant = (variant: ETableVariant) => {
-        localStorage.setItem("mainWndMainVariant", variant)
-        dispatch(setVariant( variant))
-        dispatch(navbarChange())
+    if(typeof savVariant != "string"){
+        savVariant = curVariant
+        localStorage.setItem("mainWndVariant", curVariant)
     }
+    const dispatch = useDispatch();
+    if(!navbar) {
+        dispatch(setVariant( savVariant))
+    }
+    const loadVariant = (variant: ETableVariant) => {
+        localStorage.setItem("mainWndVariant", variant)
+        dispatch(setVariant( variant))
+    }
+    console.log('MenuVariant-2 return=[' + curVariant + ']')
 
     useEffect(() => {
-        console.log("MenuVariant-useEffect")
         dispatch( setVariant(curVariant));
     }, []);
 
     return (
         <DropdownButton className="drop" variant="secondary" title={curVariant}>
-            {console.log('MenuVariant return=[' + curVariant + ']')}
+            {console.log('MenuVariant-4 return=[' + curVariant + ']')}
                 <NavDropdown.Item>
-                    <Button onClick={() => loadVariant( ETableVariant.TABLE_SHORT)} variant="secondary">
+                    <Button key={1} onClick={() => loadVariant( ETableVariant.TABLE_SHORT)} variant="secondary">
                         TABLE_SHORT
                     </Button>
                 </NavDropdown.Item>
                 <NavDropdown.Item>
-                     <Button onClick={() => loadVariant( ETableVariant.TABLE_MIDL)} variant="secondary">
+                     <Button key={2} onClick={() => loadVariant( ETableVariant.TABLE_MIDL)} variant="secondary">
                          TABLE___MIDL
                     </Button>
                 </NavDropdown.Item>
                 <NavDropdown.Item>
-                    <Button onClick={() => loadVariant( ETableVariant.TABLE_FULL)} variant="secondary">
+                    <Button key={3} onClick={() => loadVariant( ETableVariant.TABLE_FULL)} variant="secondary">
                         TABLE___FULL_
                     </Button>
                 </NavDropdown.Item>

@@ -4,23 +4,25 @@ import {ETableVariant} from "../../types/IMain";
 
 export interface INavbarState {
     value: number;
-    curVariant: string;
+    variant: string;
 }
 
 const initialState: INavbarState = {
     value: 0,
-    curVariant: "TABLE_FULL"
+    variant: ETableVariant.TABLE_FULL
 }
 
 const  navbarSlice = createSlice({
-   name: 'navbar',
+    name: 'navbar',
     initialState,
     reducers: {
        navbarChange: (state:INavbarState) => {
            state.value += 1
        },
-       setVariant: (state:INavbarState, action: any) => {
-           state.curVariant = action.payload
+       setVariant: (state:INavbarState, action: any ) => {
+           console.log('setVariant-1 state.variant=', state.variant)
+           state.variant = action.payload
+           console.log('setVariant-2 state.variant=', state.variant)
        }
     }
 })

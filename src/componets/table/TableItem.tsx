@@ -3,7 +3,7 @@ import {IItem} from "../../types/IItem";
 import {GetNameType} from "../../services/GetNameType";
 import {GetNameUnit} from "../../services/GetNameUnit";
 import ItemService from "../../services/ItemService";
-import {useSelector} from "react-redux";
+
 
 export const TableItem: React.FC = () => {
 

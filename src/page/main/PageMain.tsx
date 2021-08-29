@@ -4,7 +4,7 @@ import WndMain from "./WndMain";
 import WndParam from "./WndParam";
 import {EPageBrand} from "../../menu/MenuBrand";
 
-const PageMain = () => {
+const PageMain: React.FC = () => {
 
     localStorage.setItem(EPageBrand.CURRENT_HOME, EPageBrand.PAGE_MAIN)
 

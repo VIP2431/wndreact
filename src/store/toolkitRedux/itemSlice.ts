@@ -2,7 +2,6 @@ import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import {EUrlApart, IItem} from "../../types/IItem";
 import axios from "axios";
 import {RootState} from "../index";
-import {stat} from "fs";
 
 export interface IItemsState {
     items: IItem[],
