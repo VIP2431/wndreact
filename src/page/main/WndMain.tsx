@@ -33,6 +33,6 @@ const WndMain: FC = () => {
             }
         </>
     )
-}
+};
 
 export default WndMain;
