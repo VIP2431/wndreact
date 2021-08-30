@@ -1,7 +1,8 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
-import {EUrlApart, IItem} from "../../types/IItem";
+import {IItem} from "../../types/IItem";
 import axios from "axios";
 import {RootState} from "../index";
+import {URL_ITEMS_INIT_STATE} from "../../page/main/IPageMain";
 
 export interface IItemsState {
     items: IItem[],
@@ -14,7 +15,7 @@ const initialState: IItemsState = {
     items: [],
     isLoading: false,
     error: null,
-    url: EUrlApart.ITEM_DTO_NAME_REST_API_URL
+    url: URL_ITEMS_INIT_STATE
 }
 
 export const loadItems: any  = createAsyncThunk(

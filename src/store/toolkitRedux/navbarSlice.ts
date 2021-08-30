@@ -1,6 +1,6 @@
 import {createSlice} from "@reduxjs/toolkit";
 import {RootState} from "../index";
-import {ETableVariant} from "../../types/IMain";
+import {VARIANT_WND_MAIN_INIT_STATE} from "../../page/main/IPageMain";
 
 export interface INavbarState {
     value: number;
@@ -9,7 +9,7 @@ export interface INavbarState {
 
 const initialState: INavbarState = {
     value: 0,
-    variant: ETableVariant.TABLE_FULL
+    variant: VARIANT_WND_MAIN_INIT_STATE
 }
 
 const  navbarSlice = createSlice({
@@ -29,7 +29,7 @@ const  navbarSlice = createSlice({
 
 export const {navbarChange, setVariant} = navbarSlice.actions;
 
-export const selectNavbar = (state: RootState) => state.navbar.value
+export const selectNavbar = (state: RootState) => state.navbar
 
 export default navbarSlice.reducer;
 

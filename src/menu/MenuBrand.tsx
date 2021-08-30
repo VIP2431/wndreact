@@ -26,7 +26,7 @@ const MenuBrand = () => {
     }
 
     return (
-       <>
+       <>{console.log("MenuBrand return")}
            <div className="col-md-1">
                 <DropdownButton className="drop" variant="secondary" title={<b>{title}</b>}>
                     { menu.map( (p) =>

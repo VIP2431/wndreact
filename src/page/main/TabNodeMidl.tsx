@@ -2,7 +2,7 @@ import {IItem} from "../../types/IItem";
 import React, {FC} from "react";
 import {GetNameType} from "../../services/GetNameType";
 import {GetNameUnit} from "../../services/GetNameUnit";
-import {ITableProps} from "../../types/IMain";
+import {ITableProps} from "./IPageMain";
 
 export const TabNodeMidl: FC<ITableProps> =
     ({

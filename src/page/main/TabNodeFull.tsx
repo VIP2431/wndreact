@@ -3,7 +3,7 @@ import React, {FC} from "react";
 import {GetNameType} from "../../services/GetNameType";
 import {GetNameUnit} from "../../services/GetNameUnit";
 import {BsTrashFill} from "react-icons/bs";
-import {ITableProps} from "../../types/IMain";
+import {ITableProps} from "./IPageMain";
 
 export const TabNodeFull: FC<ITableProps> =
     ({

@@ -1,7 +1,7 @@
 import {IItem} from "../../types/IItem";
 import React, {FC} from "react";
 import {GetNameType} from "../../services/GetNameType";
-import {ITableProps} from "../../types/IMain";
+import {ITableProps} from "./IPageMain";
 
 export const TabNodeShort: FC<ITableProps> =
     ({
@@ -9,8 +9,6 @@ export const TabNodeShort: FC<ITableProps> =
          variant,
          children
      }) => {
-
- //       setVariant( ETableVariant.TABLE_SHORT);
 
         return (
             <table key='TabNodeShort' className="table table-hover">{console.log('TabNodeShort return')}
