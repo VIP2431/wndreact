@@ -9,23 +9,21 @@ import {useDispatch} from "react-redux";
 
 const WndMain: FC = () => {
 
-    console.log("WndMain")
     const navbar: number = useAppSelector((state) => state.navbar.value);
-
     const variant: string = useAppSelector((state) => state.navbar.variant);
     const {items, isLoading, error, url} = useAppSelector((state) => state.items);
 
     const dispatch = useDispatch()
     useEffect(() => {
-        console.log("WndMain useEffect №№№")
-        dispatch( loadItems( url));
-    }, [url]);
+        dispatch(loadItems(url))
+        },[ url, dispatch]
+    )
 
     return (
         <>{console.log("WndMain return")}
-            {isLoading && <h1>Идет загрузка...url=[{url}]</h1>}
+            {isLoading && <h1>Идет загрузка...</h1>}
             {error && <h1>{error}</h1>}
-            <h3>Смета -{navbar}-</h3>
+             <h3>Смета -{navbar}-</h3>
             {
                 (variant === ETableVariant.TABLE_MIDL) ?  <TabNodeMidl items={items}/>
                 : (variant === ETableVariant.TABLE_SHORT) ?  <TabNodeShort items={items}/>
@@ -33,6 +31,7 @@ const WndMain: FC = () => {
             }
         </>
     )
-};
+}
 
 export default WndMain;
+

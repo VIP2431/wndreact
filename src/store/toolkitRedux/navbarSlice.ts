@@ -20,9 +20,9 @@ const  navbarSlice = createSlice({
            state.value += 1
        },
        setVariant: (state:INavbarState, action: any ) => {
-           console.log('setVariant-1 state.variant=', state.variant)
+           console.log('navbarSlice-setVariant-1 state.variant=', state.variant)
            state.variant = action.payload
-           console.log('setVariant-2 state.variant=', state.variant)
+           console.log('navbarSlice-setVariant-2 state.variant=', state.variant)
        }
     }
 })

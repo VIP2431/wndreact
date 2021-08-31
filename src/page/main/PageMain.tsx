@@ -6,7 +6,8 @@ import {EPageBrand} from "../../menu/MenuBrand";
 import {useDispatch} from "react-redux";
 import {URL_ITEMS_INIT_STATE, VARIANT_WND_MAIN_INIT_STATE} from "./IPageMain";
 import {setVariant} from "../../store/toolkitRedux/navbarSlice";
-import {setUrlItems} from "../../store/toolkitRedux/itemSlice";
+import { setUrlItems} from "../../store/toolkitRedux/itemSlice";
+
 
 const PageMain: React.FC = () => {
 
@@ -23,7 +24,7 @@ const PageMain: React.FC = () => {
 
     let savUrl = localStorage.getItem("mainWndUrlItem")
     if(typeof savUrl != "string"){
-        savUrl =  URL_ITEMS_INIT_STATE
+        savUrl = URL_ITEMS_INIT_STATE
         localStorage.setItem("mainWndUrlItem", savUrl)
     }
     dispatch(setUrlItems(savUrl))

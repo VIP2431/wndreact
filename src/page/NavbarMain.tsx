@@ -2,7 +2,6 @@ import React from 'react'
 import {Navbar} from 'react-bootstrap'
 import MenuBrand from "../menu/MenuBrand";
 import MenuMain from "./main/MenuMain";
-import {MenuVariant} from "./main/MenuVariant";
 
 const NavbarMain: React.FC = () =>  {
 

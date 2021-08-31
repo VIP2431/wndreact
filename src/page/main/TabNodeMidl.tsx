@@ -12,7 +12,7 @@ export const TabNodeMidl: FC<ITableProps> =
      }) => {
 
         return (
-            <table key='TabNodeMid' className="table table-hover">{console.log('TabNodeMidl-1')}
+            <table key='TabNodeMid' className="table table-hover">{console.log('TabNodeMidl-&&&&&&&&&')}
                 <thead>
                 <tr>
                     <th key="N1">N</th>

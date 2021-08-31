@@ -1,5 +1,5 @@
 import {Button, DropdownButton, NavDropdown} from "react-bootstrap";
-import React, {FC, useEffect} from "react";
+import React, {FC} from "react";
 import {ETableVariant} from "./IPageMain";
 import {useDispatch} from "react-redux";
 import {setVariant} from "../../store/toolkitRedux/navbarSlice";
