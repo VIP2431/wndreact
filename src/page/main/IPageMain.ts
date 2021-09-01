@@ -19,5 +19,10 @@ export interface ITableProps {
     variant?: ETableVariant.TABLE_FULL;
 }
 
+export interface IItemProps {
+    item: IItem;
+    variant?: ETableVariant.TABLE_FULL;
+}
+
 export const VARIANT_WND_MAIN_INIT_STATE = ETableVariant.TABLE_FULL
 export const URL_ITEMS_INIT_STATE = EUrlApart.ITEM_DTO_NAME_REST_API_URL

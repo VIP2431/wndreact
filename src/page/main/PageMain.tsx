@@ -1,13 +1,11 @@
 import React from "react";
 import NavbarMain from "../NavbarMain";
 import WndMain from "./WndMain";
-import WndParam from "./WndParam";
 import {EPageBrand} from "../../menu/MenuBrand";
 import {useDispatch} from "react-redux";
 import {URL_ITEMS_INIT_STATE, VARIANT_WND_MAIN_INIT_STATE} from "./IPageMain";
 import {setVariant} from "../../store/toolkitRedux/navbarSlice";
 import { setUrlItems} from "../../store/toolkitRedux/itemSlice";
-
 
 const PageMain: React.FC = () => {
 
@@ -30,26 +28,15 @@ const PageMain: React.FC = () => {
     dispatch(setUrlItems(savUrl))
 
     return (
-         <div className="wnd-app">{console.log('PageMain return *****')}
+         <div className="container-fluid">{console.log('PageMain return *****')}
             <header className='wnd-header'>
                 <NavbarMain />
             </header>
-            <main className='wnd-main'>
-                <div className='wnd-home'>
-                    <WndMain />
-               </div>
-                <aside className='wnd-param'>
-                    <div className='wnd-section'>
-                        <h2>Edit</h2>
-                    </div>
-                     <div className='wnd-section-2'>
-                        <WndParam />
-                    </div>
 
-                </aside>
-            </main>
+            <WndMain />
+
             <footer className='wnd-footer'>
-                 Footer
+                Footer
             </footer>
         </div>
     )
