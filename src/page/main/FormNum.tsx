@@ -1,11 +1,11 @@
 import React, {FC} from "react";
-import {IItemProps} from "./IPageMain";
+import {IFormProps} from "./IPageMain";
 
 
-const FormNum: FC<IItemProps> =
+const FormNum: FC<IFormProps> =
     ({
          item,
-         variant,
+         name,
          children
      }) => {
 

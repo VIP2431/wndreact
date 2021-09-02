@@ -39,10 +39,10 @@ const WndMain: FC = () => {
                     <WndParam />
                 </div>
                 <div className='wnd-section'>
-                     <FormItem item={items[itemA - 1]} name='A'/>
+                     <FormItem item={items[itemA]} name='A'/>
                 </div>
                  <div className='wnd-section'>
-                     <FormItem item={items[itemB - 1]} name='B'/>
+                     <FormItem item={items[itemB]} name='B'/>
                  </div>
             </aside>
         </main>

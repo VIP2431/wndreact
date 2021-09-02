@@ -28,6 +28,8 @@ export const loadItems: any  = createAsyncThunk(
             console.log("loadItems-++++++++++++++++++++++++--Begin")
             const response = await axios.get( urlItem)
             const data = response.data
+            // const jsonData =JSON.stringify( data, null, 2)
+            // console.log("loadItems-jsonData=", jsonData)
             console.log("loadItems-========================--End")
             return data;
         } catch (error){
@@ -45,11 +47,11 @@ export const itemsSlice = createSlice({
             console.log("itemsSlice-setUrlItems state.url=",state.url)
         },
         setItemA(state, action) {
-            state.itemA = action.payload;
+            state.itemA = action.payload - 1;
             console.log("itemsSlice-setUrlItems state.itemA=",state.itemA)
         },
         setItemB(state, action) {
-            state.itemB = action.payload;
+            state.itemB = action.payload - 1;
             console.log("itemsSlice-setUrlItems state.itemB=",state.itemB)
         },
     },
