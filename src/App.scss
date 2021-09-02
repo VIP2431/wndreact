@@ -129,8 +129,8 @@ body {
 //  grid-row: 1/2 1/2 ;
 //  grid-auto-rows: auto;
 
-  grid-template-rows: 1fr 1fr 1fr;
-  grid-template-columns: 1fr 1fr;
+ // grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 2fr;
   grid-gap: 1em;
 
 }
@@ -204,12 +204,10 @@ body {
 }
 
 .col {
-  border: solid 1px  #000;
-  padding: 0px;
-  margin: 2px;
-
-  align-self: start;
-
+  //background-color: #A5D6A7;
+  //border: solid 1px  #000;
+  padding: 2px;
+  margin: 4px;
 }
 
 .name-item {

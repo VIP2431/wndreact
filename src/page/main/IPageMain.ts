@@ -19,6 +19,11 @@ export interface ITableProps {
     variant?: ETableVariant.TABLE_FULL;
 }
 
+export interface IFormProps {
+    item: IItem;
+    name?: string;
+}
+
 export interface IItemProps {
     item: IItem;
     variant?: ETableVariant.TABLE_FULL;

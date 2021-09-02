@@ -10,22 +10,21 @@ const FormKey: FC<IItemProps> =
 
      return (
          <div className='row'>
-             <div className='col-md-6'>
-                 <div className='col'>
-                     key:{item.key}
+                 <div className='col-md-4'>
+                     <div className='col'>
+                         {`key: `}{item.key}
+                    </div>
                  </div>
-                 <div className='col'>
-                     {item.id}
+                 <div className='col-md-4'>
+                     <div className='col'>
+                         {`keyParent: `}{item.keyParent}
+                    </div>
                  </div>
-             </div>
-             <div className='col-md-6'>
-                 <div className='col'>
-                    keyParent:{item.keyParent}
+                 <div className='col-md-4'>
+                     <div className='col'>
+                         {`codePoz: `}{item.codePoz}
+                    </div>
                  </div>
-                 <div className='col'>
-                    codePoz:{item.codePoz}
-                 </div>
-            </div>
         </div>
     )
 }

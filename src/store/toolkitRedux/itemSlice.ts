@@ -7,14 +7,18 @@ export interface IItemsState {
     items: IItem[],
     isLoading: boolean,
     error: null | string,
-    url: string
+    url: string,
+    itemA: number,
+    itemB: number,
 }
 
 const initialState: IItemsState = {
     items: [],
     isLoading: false,
     error: null,
-    url: ''
+    url: '',
+    itemA: 0,
+    itemB: 0,
 }
 
 export const loadItems: any  = createAsyncThunk(
@@ -35,18 +39,19 @@ export const loadItems: any  = createAsyncThunk(
 export const itemsSlice = createSlice({
     name: 'items',
     initialState,
-    reducers:
-    //    {
-    //     setItems(state, action){
-    //         state.items = action.payload
-    //         console.log("itemsSlice-setItems")
-    //     }
-    // },
-    {
+    reducers: {
         setUrlItems(state, action) {
             state.url = action.payload;
             console.log("itemsSlice-setUrlItems state.url=",state.url)
-        }
+        },
+        setItemA(state, action) {
+            state.itemA = action.payload;
+            console.log("itemsSlice-setUrlItems state.itemA=",state.itemA)
+        },
+        setItemB(state, action) {
+            state.itemB = action.payload;
+            console.log("itemsSlice-setUrlItems state.itemB=",state.itemB)
+        },
     },
     extraReducers: {
         [loadItems.pending]: (state) => {
@@ -67,7 +72,7 @@ export const itemsSlice = createSlice({
     }
 })
 
-export const {setUrlItems} = itemsSlice.actions;
+export const {setUrlItems, setItemA, setItemB} = itemsSlice.actions;
 export const selectItems = (state: RootState) => state.items
 export default itemsSlice.reducer;
 

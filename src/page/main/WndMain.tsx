@@ -14,6 +14,7 @@ const WndMain: FC = () => {
     const navbar: number = useAppSelector((state) => state.navbar.value);
     const variant: string = useAppSelector((state) => state.navbar.variant);
     const {items, isLoading, error, url} = useAppSelector((state) => state.items);
+    const {itemA, itemB} = useAppSelector((state) => state.items);
 
     const dispatch = useDispatch()
     useEffect(() => {
@@ -38,10 +39,10 @@ const WndMain: FC = () => {
                     <WndParam />
                 </div>
                 <div className='wnd-section'>
-                     <FormItem item={items[1]}/>
+                     <FormItem item={items[itemA - 1]} name='A'/>
                 </div>
                  <div className='wnd-section'>
-                     <FormItem item={items[2]} />
+                     <FormItem item={items[itemB - 1]} name='B'/>
                  </div>
             </aside>
         </main>
